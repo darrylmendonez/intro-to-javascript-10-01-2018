@@ -121,5 +121,5 @@ let flipCoin = function() {
       document.getElementById('win-lose-img').setAttribute('src', 'https://images.ecosia.org/z-nJSIIHZEuJK46AO2TioDbSzMY=/0x390/smart/https%3A%2F%2Fwww.emojibase.com%2Fresources%2Fimg%2Femojis%2Fapple%2Fx1f622.png.pagespeed.ic.IxgTwwGPD1.png')
     }
   }
-  setTimeout(showResults(), 3000);
+  setTimeout(showResults, 3000);
 }
