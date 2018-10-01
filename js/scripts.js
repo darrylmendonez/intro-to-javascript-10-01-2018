@@ -1,19 +1,22 @@
+// // Declaring variables and console.log
 // let firstName;
 // age = 38
 // console.log(age);
 // age = 40;
 // console.log(age);
 //
+// //Strings & Concatonating
 // var welcomeMsg = "Welcome to this website.";
 // var welcomeQuestion = "How are you today?";
 // console.log(welcomeMsg + " " + welcomeQuestion);
 //
+// //Numbers and Arithmetic Operators
 // var number = 2;
 // var anotherNumber = 3;
 // console.log("-----------");
 // console.log(number + anotherNumber * 4);
 //
-// // object
+// // Objects
 // var player = {
 //   firstName: "Mario",
 //   lastName: "Lopez",
@@ -32,7 +35,8 @@
 //
 //
 //
-//
+// // Functions
+// // Convert Fahrenheit to Celsius
 // var boilingPtFar = 100;
 // var freezingPointFar = 0;
 // var currentTempFar = 70;
@@ -55,7 +59,7 @@
 // convertFarToCels(boilingPtFar);
 // convertFarToCels(freezingPointFar);
 //
-//
+// // Built-in Objects - Math
 // // Pythagorean's Theorem
 // var smallSide = 3;
 // var mediumSide = 5;
@@ -85,10 +89,10 @@
 
 // heads or tails game
 let userChoice = (prompt("Heads or tails?")).toLowerCase();
-console.log("userChoice = " + userChoice)
+console.log("userChoice = " + userChoice);
 let displayUserChoice = function() {
   document.getElementById('user-choice').innerHTML = userChoice;
-}
+};
 
 displayUserChoice();
 
@@ -106,20 +110,23 @@ let flipCoin = function() {
   document.getElementById('coin-img').setAttribute('src', 'https://cdn.dribbble.com/users/58530/screenshots/2323771/coin-flip.gif');
   let showResults = function() {
     document.getElementById('flip-result').innerHTML = 'Coin landed on: ' + flipResult;
-    if (userChoice === flipResult) {
-      document.getElementById('win-lose-msg').innerHTML = 'You win!';
-      document.getElementById('win-lose-msg').setAttribute('class', 'winStyle');
-      console.log('You win!');
-      document.getElementById('win-lose-img').setAttribute('src', 'https://images.ecosia.org/Q5NlgsLnyROvdwGMSP0lxx83zzs=/0x390/smart/http%3A%2F%2Femojipop.net%2Fdata%2Fimages%2Femoji_set_0.png')
-    }
-    else {
-      document.getElementById('win-lose-msg').innerHTML = 'You lose!';
+    let displayResultMsg = function() {
+      if (userChoice === flipResult) {
+        document.getElementById('win-lose-msg').innerHTML = 'You win!';
+        document.getElementById('win-lose-msg').setAttribute('class', 'winStyle');
+        console.log('You win!');
+        document.getElementById('win-lose-img').setAttribute('src', 'https://images.ecosia.org/Q5NlgsLnyROvdwGMSP0lxx83zzs=/0x390/smart/http%3A%2F%2Femojipop.net%2Fdata%2Fimages%2Femoji_set_0.png')
+      }
+      else {
+        document.getElementById('win-lose-msg').innerHTML = 'You lose!';
 
-      document.getElementById('win-lose-msg').setAttribute('class', 'loseStyle');
-      console.log('You lose!');
+        document.getElementById('win-lose-msg').setAttribute('class', 'loseStyle');
+        console.log('You lose!');
 
-      document.getElementById('win-lose-img').setAttribute('src', 'https://images.ecosia.org/z-nJSIIHZEuJK46AO2TioDbSzMY=/0x390/smart/https%3A%2F%2Fwww.emojibase.com%2Fresources%2Fimg%2Femojis%2Fapple%2Fx1f622.png.pagespeed.ic.IxgTwwGPD1.png')
+        document.getElementById('win-lose-img').setAttribute('src', 'https://images.ecosia.org/z-nJSIIHZEuJK46AO2TioDbSzMY=/0x390/smart/https%3A%2F%2Fwww.emojibase.com%2Fresources%2Fimg%2Femojis%2Fapple%2Fx1f622.png.pagespeed.ic.IxgTwwGPD1.png')
+      }
     }
+    setTimeout(displayResultMsg, 1000);
   }
-  setTimeout(showResults, 3000);
+  setTimeout(showResults, 2000);
 }
